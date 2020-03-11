@@ -434,3 +434,7 @@ class BaseOAuth2(OAuthAuth):
 
     def refresh_token_url(self):
         return self.REFRESH_TOKEN_URL or self.access_token_url()
+
+    @classmethod
+    def is_auth0(cls):
+        return cls.__name__ == "Auth0OAuth2"
